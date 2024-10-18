@@ -38,7 +38,6 @@
             this.txtCustomerBalance = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCustomerCity = new System.Windows.Forms.TextBox();
             this.rdbActive = new System.Windows.Forms.RadioButton();
             this.rdbPassive = new System.Windows.Forms.RadioButton();
             this.btnAra = new System.Windows.Forms.Button();
@@ -48,6 +47,8 @@
             this.btnListele = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnProcedure = new System.Windows.Forms.Button();
+            this.cmbCity = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -144,14 +145,6 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Şehir:";
             // 
-            // txtCustomerCity
-            // 
-            this.txtCustomerCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtCustomerCity.Location = new System.Drawing.Point(129, 155);
-            this.txtCustomerCity.Name = "txtCustomerCity";
-            this.txtCustomerCity.Size = new System.Drawing.Size(127, 26);
-            this.txtCustomerCity.TabIndex = 10;
-            // 
             // rdbActive
             // 
             this.rdbActive.AutoSize = true;
@@ -185,6 +178,7 @@
             this.btnAra.TabIndex = 18;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = true;
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // btnGuncelle
             // 
@@ -205,6 +199,7 @@
             this.btnSil.TabIndex = 16;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnEkle
             // 
@@ -215,13 +210,14 @@
             this.btnEkle.TabIndex = 15;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnListele
             // 
             this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnListele.Location = new System.Drawing.Point(16, 227);
             this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(240, 34);
+            this.btnListele.Size = new System.Drawing.Size(113, 34);
             this.btnListele.TabIndex = 14;
             this.btnListele.Text = "Listele";
             this.btnListele.UseVisualStyleBackColor = true;
@@ -249,11 +245,33 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
+            // btnProcedure
+            // 
+            this.btnProcedure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnProcedure.Location = new System.Drawing.Point(143, 227);
+            this.btnProcedure.Name = "btnProcedure";
+            this.btnProcedure.Size = new System.Drawing.Size(113, 34);
+            this.btnProcedure.TabIndex = 21;
+            this.btnProcedure.Text = "Prosedür";
+            this.btnProcedure.UseVisualStyleBackColor = true;
+            this.btnProcedure.Click += new System.EventHandler(this.btnProcedure_Click);
+            // 
+            // cmbCity
+            // 
+            this.cmbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbCity.FormattingEnabled = true;
+            this.cmbCity.Location = new System.Drawing.Point(129, 158);
+            this.cmbCity.Name = "cmbCity";
+            this.cmbCity.Size = new System.Drawing.Size(127, 28);
+            this.cmbCity.TabIndex = 22;
+            // 
             // FrmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbCity);
+            this.Controls.Add(this.btnProcedure);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAra);
@@ -262,7 +280,6 @@
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.btnListele);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtCustomerCity);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCustomerBalance);
@@ -273,7 +290,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCustomerId);
             this.Name = "FrmCustomer";
-            this.Text = "FrmCustomer";
+            this.Text = "Müşteri Formu";
             this.Load += new System.EventHandler(this.FrmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -295,7 +312,6 @@
         private System.Windows.Forms.TextBox txtCustomerBalance;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCustomerCity;
         private System.Windows.Forms.RadioButton rdbActive;
         private System.Windows.Forms.RadioButton rdbPassive;
         private System.Windows.Forms.Button btnAra;
@@ -305,5 +321,7 @@
         private System.Windows.Forms.Button btnListele;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnProcedure;
+        private System.Windows.Forms.ComboBox cmbCity;
     }
 }
