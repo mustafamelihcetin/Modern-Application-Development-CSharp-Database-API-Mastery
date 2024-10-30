@@ -81,7 +81,7 @@
             this.LblLastOrderedCustomer = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.LblTotalIncomeOfAyran = new System.Windows.Forms.Label();
+            this.LblTotalIncomeOfCoke = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.LblNumberOfActiveProduct = new System.Windows.Forms.Label();
@@ -636,22 +636,22 @@
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(211)))), ((int)(((byte)(217)))));
-            this.panel18.Controls.Add(this.LblTotalIncomeOfAyran);
+            this.panel18.Controls.Add(this.LblTotalIncomeOfCoke);
             this.panel18.Controls.Add(this.label36);
             this.panel18.Location = new System.Drawing.Point(464, 360);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(220, 110);
             this.panel18.TabIndex = 6;
             // 
-            // LblTotalIncomeOfAyran
+            // LblTotalIncomeOfCoke
             // 
-            this.LblTotalIncomeOfAyran.AutoSize = true;
-            this.LblTotalIncomeOfAyran.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LblTotalIncomeOfAyran.Location = new System.Drawing.Point(93, 50);
-            this.LblTotalIncomeOfAyran.Name = "LblTotalIncomeOfAyran";
-            this.LblTotalIncomeOfAyran.Size = new System.Drawing.Size(19, 21);
-            this.LblTotalIncomeOfAyran.TabIndex = 1;
-            this.LblTotalIncomeOfAyran.Text = "0";
+            this.LblTotalIncomeOfCoke.AutoSize = true;
+            this.LblTotalIncomeOfCoke.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblTotalIncomeOfCoke.Location = new System.Drawing.Point(93, 50);
+            this.LblTotalIncomeOfCoke.Name = "LblTotalIncomeOfCoke";
+            this.LblTotalIncomeOfCoke.Size = new System.Drawing.Size(19, 21);
+            this.LblTotalIncomeOfCoke.TabIndex = 1;
+            this.LblTotalIncomeOfCoke.Text = "0";
             // 
             // label36
             // 
@@ -850,7 +850,7 @@
         private System.Windows.Forms.Label LblLastOrderedCustomer;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Label LblTotalIncomeOfAyran;
+        private System.Windows.Forms.Label LblTotalIncomeOfCoke;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label LblNumberOfActiveProduct;

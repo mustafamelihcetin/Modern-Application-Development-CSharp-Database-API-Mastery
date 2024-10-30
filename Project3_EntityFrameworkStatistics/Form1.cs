@@ -68,30 +68,70 @@ namespace Project3_EntityFrameworkStatistics
             SetLabelTextAndCenter(LblCustomerCount, panel3, _db.TblCustomer.Count().ToString());
             SetLabelTextAndCenter(LblOrderCount, panel4, _db.TblOrder.Count().ToString());
 
-            var totalProductStock = _db.TblProduct.Sum(x => x.ProductStock);
+            var totalProductStock = _db.TblProduct.Sum(a => a.ProductStock);
             SetLabelTextAndCenter(LblProductTotalStock, panel5, totalProductStock.ToString());
 
-            var averageProductPrice = (decimal)(_db.TblProduct.Sum(x => x.ProductPrice) / totalProductStock);
+            var averageProductPrice = (decimal)(_db.TblProduct.Sum(a => a.ProductPrice) / totalProductStock);
             SetLabelTextAndCenter(LblAverageProductPrice, panel10, averageProductPrice.ToString("N2") + "₺");
 
-            var totalProductCountByCategoryIsFruit = _db.TblProduct.Where(x => x.CategoryID==1).Sum(y => y.ProductStock);
+            var totalProductCountByCategoryIsFruit = _db.TblProduct.Where(a => a.CategoryID==1).Sum(y => y.ProductStock);
             SetLabelTextAndCenter(LblTotalFruit, panel9, totalProductCountByCategoryIsFruit.ToString());
 
-            var totalTransactionVolumeAyranGetStock = _db.TblProduct.Where(x=> x.ProductID == 5).Select(y=> y.ProductStock).FirstOrDefault();
-            var totalTransactionVolumeAyranGetPrice = _db.TblProduct.Where(x=> x.ProductID == 5).Select(y=> y.ProductPrice).FirstOrDefault();
+            var totalTransactionVolumeAyranGetStock = _db.TblProduct.Where(a=> a.ProductID == 5).Select(y=> y.ProductStock).FirstOrDefault();
+            var totalTransactionVolumeAyranGetPrice = _db.TblProduct.Where(a=> a.ProductID == 5).Select(y=> y.ProductPrice).FirstOrDefault();
             var totalTransactionVolumeAyran = totalTransactionVolumeAyranGetStock * totalTransactionVolumeAyranGetPrice; 
             SetLabelTextAndCenter(LblTotalTransactionVolumeAyran, panel8, (totalTransactionVolumeAyran + "₺").ToString());
 
-            var ProductsWhereTotalStockIsUnder100 = _db.TblProduct.Where(x => x.ProductStock <= 100).Sum(y => y.ProductStock);
+            var ProductsWhereTotalStockIsUnder100 = _db.TblProduct.Where(a => a.ProductStock <= 100).Sum(y => y.ProductStock);
             SetLabelTextAndCenter(LblProductsWhereTotalStockIsUnder100, panel8, (ProductsWhereTotalStockIsUnder100.ToString()));
                         
-            int id = _db.TblCategory.Where(x => x.CategoryName == "Sebze").Select(y => y.CategoryID).FirstOrDefault();
-            var ActiveVegetableStock = _db.TblProduct.Where(x => x.CategoryID == id && x.ProductStatus==true).Sum(y => y.ProductStock);
+            int id = _db.TblCategory.Where(a => a.CategoryName == "Sebze").Select(y => y.CategoryID).FirstOrDefault();
+            var ActiveVegetableStock = _db.TblProduct.Where(a => a.CategoryID == id && a.ProductStatus==true).Sum(y => y.ProductStock);
             if (ActiveVegetableStock == null)
                 ActiveVegetableStock = 0;
             SetLabelTextAndCenter(LblActiveVegetableStock, panel7, ActiveVegetableStock.ToString());
 
+            var customerID = _db.TblCustomer.Where(a => a.CustomerCountry == "Türkiye").Select(y => y.CustomerID).FirstOrDefault();
+            var x =_db.Database.SqlQuery<int>("SELECT COUNT(*) FROM TblOrder WHERE CustomerID IN (SELECT CustomerID FROM TblCustomer WHERE CustomerCountry='Türkiye')").FirstOrDefault();
+            SetLabelTextAndCenter(LblOrdersFromTurkiyeSQL, panel15, x.ToString());
+
+
+            var findCustomerID = _db.TblCustomer.Where(a => a.CustomerCountry == "Türkiye")
+                                                .Select(y => y.CustomerID).ToList();
+            var orderCountFromTurkiyeWithEF = _db.TblOrder.Count(c => findCustomerID.Contains(c.CustomerID.Value));
+            SetLabelTextAndCenter(LblOrdersFromTurkiyeEF, panel15, orderCountFromTurkiyeWithEF.ToString());
             
+            var orderTotalPriceByCategoryIsMeyve = _db.Database.SqlQuery<decimal>("SELECT SUM(o.TotalPrice) as ToplamSatisFiyati FROM TblOrder o JOIN TblProduct p ON o.ProductID = p.ProductID JOIN TblCategory c ON p.CategoryID = c.CategoryID WHERE c.CategoryName = 'Meyve'").FirstOrDefault();
+            SetLabelTextAndCenter(LblFruitSalesIncome, panel13, orderTotalPriceByCategoryIsMeyve.ToString());
+
+            var orderTotalPriceByCategoryIsMeyveEF = (from o in _db.TblOrder
+                                                      join p in _db.TblProduct on o.ProductID equals p.ProductID
+                                                      join c in _db.TblCategory on p.CategoryID equals c.CategoryID
+                                                      where c.CategoryName=="Meyve"
+                                                      select o.TotalPrice).Sum();
+            SetLabelTextAndCenter(LblFruitSalesIncomeEF, panel12, orderTotalPriceByCategoryIsMeyveEF.ToString());
+
+            var lastAddedProduct = _db.TblProduct.OrderByDescending(a => a.ProductID).Select(b => b.ProductName).FirstOrDefault();
+            SetLabelTextAndCenter(LblLastAddedProduct, panel11, lastAddedProduct.ToString());
+
+            var lastAddedCategory = _db.TblCategory.OrderByDescending(a => a.CategoryID).Select(b=> b.CategoryName).FirstOrDefault();
+            SetLabelTextAndCenter(LblLastAddedCategory, panel20, lastAddedCategory.ToString());
+
+            var totalActiveProduct = _db.TblProduct.Where(a => a.ProductStock>0).Count();
+            SetLabelTextAndCenter(LblNumberOfActiveProduct,panel19, totalActiveProduct.ToString());
+
+            var cokeStock = _db.TblProduct.Where(a => a.ProductName == "Kola").Select(b => b.ProductStock).FirstOrDefault();
+            var cokePrice = _db.TblProduct.Where(a => a.ProductName == "Kola").Select(b => b.ProductPrice).FirstOrDefault();
+            var totalIncomeFromCoke = cokeStock * cokePrice;
+            SetLabelTextAndCenter(LblTotalIncomeOfCoke, panel18, totalIncomeFromCoke.ToString());
+
+            var p1 = _db.TblOrder.OrderByDescending(a => a.OrderID).Select(b => b.CustomerID).FirstOrDefault();
+            var lastOrderingCustomer = _db.TblCustomer.Where(a => a.CustomerID == p1).Select(b => b.CustomerName).FirstOrDefault();
+            SetLabelTextAndCenter(LblLastOrderedCustomer, panel17, lastOrderingCustomer.ToString());
+
+            var numberOfCountries = _db.Database.SqlQuery<int>("SELECT COUNT(DISTINCT (CustomerCountry)) FROM TblCustomer").FirstOrDefault();
+            var numberOfCountriesEF = _db.TblCustomer.Select(a => a.CustomerCountry).Distinct().Count();
+            SetLabelTextAndCenter(LblNumberOfCountryDiversity,panel16, numberOfCountriesEF.ToString());
 
         }
 
