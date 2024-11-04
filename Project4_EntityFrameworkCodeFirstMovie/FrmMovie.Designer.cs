@@ -34,7 +34,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tbMovieName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvCategory = new System.Windows.Forms.DataGridView();
+            this.dgvMovie = new System.Windows.Forms.DataGridView();
             this.tbMovieId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnList = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mtbMovieDate = new System.Windows.Forms.MaskedTextBox();
             this.cmbMovieCategory = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovie)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -112,15 +112,15 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Film Adı: ";
             // 
-            // dgvCategory
+            // dgvMovie
             // 
-            this.dgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategory.Location = new System.Drawing.Point(336, 16);
-            this.dgvCategory.Name = "dgvCategory";
-            this.dgvCategory.ReadOnly = true;
-            this.dgvCategory.Size = new System.Drawing.Size(696, 512);
-            this.dgvCategory.TabIndex = 13;
+            this.dgvMovie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovie.Location = new System.Drawing.Point(336, 16);
+            this.dgvMovie.Name = "dgvMovie";
+            this.dgvMovie.ReadOnly = true;
+            this.dgvMovie.Size = new System.Drawing.Size(696, 512);
+            this.dgvMovie.TabIndex = 13;
             // 
             // tbMovieId
             // 
@@ -228,6 +228,7 @@
             // 
             // cmbMovieCategory
             // 
+            this.cmbMovieCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMovieCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbMovieCategory.FormattingEnabled = true;
             this.cmbMovieCategory.Location = new System.Drawing.Point(136, 256);
@@ -255,14 +256,14 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbMovieName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvCategory);
+            this.Controls.Add(this.dgvMovie);
             this.Controls.Add(this.tbMovieId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnList);
             this.Name = "FrmMovie";
             this.Text = "FrmMovie";
             this.Load += new System.EventHandler(this.FrmMovie_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,7 +277,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox tbMovieName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvCategory;
+        private System.Windows.Forms.DataGridView dgvMovie;
         private System.Windows.Forms.TextBox tbMovieId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnList;
