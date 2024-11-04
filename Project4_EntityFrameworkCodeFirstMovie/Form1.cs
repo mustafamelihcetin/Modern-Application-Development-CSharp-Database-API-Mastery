@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project4_EntityFrameworkCodeFirstMovie.DAL.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,23 @@ namespace Project4_EntityFrameworkCodeFirstMovie
         public Form1()
         {
             InitializeComponent();
+        }
+        MovieContext movieContext = new MovieContext();
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            var values = movieContext.Categories.ToList();
+            dgvCategory.DataSource = values;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var values = movieContext.Categories.ToList();
+            dgvCategory.DataSource = values;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
         }
     }
 }
