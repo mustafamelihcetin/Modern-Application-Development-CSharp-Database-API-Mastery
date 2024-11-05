@@ -57,5 +57,29 @@ namespace Project5_DapperNorthwind
             await connection.ExecuteAsync(query,parameters);
             MessageBox.Show("Successfully");
         }
+
+        private async void FrmCategories_Load(object sender, EventArgs e)
+        {
+            //Number of Categories
+            string categoryQuery = "SELECT Count(*) FROM Categories";
+            var countCategories = await connection.ExecuteScalarAsync<int>(categoryQuery);
+            lblCategoryCount.Text = "Total number of categories: "+ countCategories;
+
+            //Number of Products
+            string productQuery = "SELECT Count(*) FROM Products";
+            var countProducts = await connection.ExecuteScalarAsync<int?>(productQuery);
+            lblProductCount.Text = "Total number of products: "+ countProducts;
+
+            //Average number of products in stock
+            string productsInStockQuery = "SELECT AVG(UnitsInStock) FROM Products";
+            var countProductsInStock= await connection.ExecuteScalarAsync(productsInStockQuery);
+            lblProductAvgInStock.Text = "Average number of products in stock: " + countProductsInStock;
+
+            //lblSeafoodProductTotalPrice cid8
+            string seafoodProductTotalPriceQuery = "SELECT SUM(UnitPrice) FROM Products WHERE CategoryID=8";
+            var countSeafoodProductTotalPriceQuery = await connection.ExecuteScalarAsync<decimal>(seafoodProductTotalPriceQuery);
+            lblSeafoodProductTotalPrice.Text = "Total price of seafood: " + countSeafoodProductTotalPriceQuery;
+
+        }
     }
 }
