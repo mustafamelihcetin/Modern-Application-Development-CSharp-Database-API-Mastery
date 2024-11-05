@@ -16,5 +16,11 @@ namespace Project5_DapperNorthwind
         {
             InitializeComponent();
         }
+
+        private async void btnCategoryList_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM Categories";
+            var connection = "Server=DPCM; initial catalog=Db5Project20; integrated security=true";
+        }
     }
 }
