@@ -49,5 +49,23 @@ namespace Project6_ApiWeather.Controllers
             var value = context.Cities.Find(id);
             return Ok(value);
         }
+        [HttpGet("TotalCityCount")]
+        public IActionResult TotalCityCount()
+        {
+            var value = context.Cities.Count();
+            return Ok(value);
+        }
+        [HttpGet("MaxTempCityName")]
+        public IActionResult MaxTempCityName()
+        {
+            var value = context.Cities.OrderByDescending(x => x.Temperature).Select(y => y.Name).FirstOrDefault();
+            return Ok(value);
+        }
+        [HttpGet("MinTempCityName")]
+        public IActionResult MinTempCityName()
+        {
+            var value = context.Cities.OrderBy(x => x.Temperature).Select(y => y.Name).FirstOrDefault();
+            return Ok(value);
+        }
     }
 }
