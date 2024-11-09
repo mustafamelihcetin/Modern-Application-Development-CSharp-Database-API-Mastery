@@ -36,7 +36,22 @@ switch (number)
         }
         break;
     case 2:
-        Console.WriteLine("Yeni şehir ekleme alanı");
+        string url2 = "https://localhost:7000/api/Weathers";
+        using (HttpClient client = new HttpClient())
+        {
+            HttpResponseMessage response = await client.GetAsync(url2);
+            string responseBody = await response.Content.ReadAsStringAsync();
+            JArray jArray = JArray.Parse(responseBody);
+            foreach (var item in jArray)
+            {
+                string cityName = item["name"].ToString();
+                string temperature = item["temperature"].ToString();
+                string country = item["country"].ToString();
+                Console.WriteLine($"Şehir    : {cityName}");
+                Console.WriteLine($"Sıcaklık : {temperature}");
+                Console.WriteLine($"Ülke     : {country}\n");
+            }
+        }
         break;
     case 3:
         Console.WriteLine("Şehir silme alanı");
