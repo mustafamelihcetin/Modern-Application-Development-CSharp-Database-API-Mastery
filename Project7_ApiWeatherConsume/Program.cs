@@ -148,6 +148,26 @@ switch (number)
         break;
 
     case 6:
+
+        string url6 = "https://localhost:7000/api/Weathers/GetByIdWeatherCity?id=";
+        Console.Write("İstediğiniz şehirini ID değeri: ");
+        int id3 = int.Parse(Console.ReadLine());
+        Console.WriteLine();
+        using(HttpClient client = new HttpClient())
+        {
+            HttpResponseMessage response = await client.GetAsync(url6 + id3);
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+            JObject weatherCityObject = JObject.Parse(responseBody);
+
+            string name = weatherCityObject["Name"].ToString();
+            string detail = weatherCityObject["Detail"].ToString();
+            string country = weatherCityObject["Country"].ToString();
+            decimal temp = decimal.Parse(weatherCityObject["Temperature"].ToString());
+            Console.WriteLine("Girmiş olduğunu ID değerine ait bilgiler: ");
+            Console.WriteLine();
+            Console.Write("Şehir: " + name + "\nÜlke: "+country+"\nSıcaklık: "+temp+"\nDetay: "+detail);
+        }
         break;
 
     default:
