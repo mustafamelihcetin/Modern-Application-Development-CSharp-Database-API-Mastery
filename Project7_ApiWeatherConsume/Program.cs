@@ -13,7 +13,8 @@ Console.WriteLine("### 1 - Şehir Listesini Getirme İşlemi");
 Console.WriteLine("### 2 - Şehir ve sıcaklık Listesini Getirme İşlemi");
 Console.WriteLine("### 3 - Yeni Şehir Ekleme İşlemi");
 Console.WriteLine("### 4 - Şehir Silme İşlemi");
-Console.WriteLine("### 5 - ID'ye Göre Şehir Getirme İşlemi");
+Console.WriteLine("### 5 - Veri Güncelleme İşlemi");
+Console.WriteLine("### 6 - ID'ye Göre Şehir Getirme İşlemi");
 Console.WriteLine();
 
 #endregion
@@ -104,6 +105,45 @@ switch (number)
         break;
 
     case 5:
+        Console.WriteLine("### Veri Güncelleme İşlemi ###\n");
+
+        string name4, country4, detail4;
+        decimal temperature3;
+        int id2;
+        Console.Write("Şehir Adı: ");
+        name4 = Console.ReadLine();
+
+        Console.Write("Ülke Adı: ");
+        country4 = Console.ReadLine();
+
+        Console.Write("Detay: ");
+        detail4 = Console.ReadLine();
+
+        Console.Write("Sıcaklık: ");
+        temperature3 = decimal.Parse(Console.ReadLine());
+
+        Console.Write("ID: ");
+        id2 = int.Parse(Console.ReadLine());
+
+        string url5 = "https://localhost:7000/api/Weathers";
+
+        var updatedValues = new
+        {
+            ID = id2,
+            Name = name4,
+            Country = country4,
+            Detail = detail4,
+            Temperature = temperature3
+        };
+
+        using (HttpClient client = new HttpClient())
+        {
+            string json = JsonConvert.SerializeObject(updatedValues);
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PutAsync(url5, content);
+            response.EnsureSuccessStatusCode();
+        }
+
 
         break;
 
