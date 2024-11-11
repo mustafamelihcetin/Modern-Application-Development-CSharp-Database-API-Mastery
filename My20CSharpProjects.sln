@@ -13,9 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project4_EntityFrameworkCod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project5_DapperNorthwind", "Project5_DapperNorthwind\Project5_DapperNorthwind.csproj", "{8BC902D5-0BFD-4CED-9F08-0FB04F22585D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project6_ApiWeather", "Project6_ApiWeather\Project6_ApiWeather.csproj", "{F8513887-086F-4882-BDDB-6873EF1C29E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project6_ApiWeather", "Project6_ApiWeather\Project6_ApiWeather.csproj", "{F8513887-086F-4882-BDDB-6873EF1C29E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project7_ApiWeatherConsume", "Project7_ApiWeatherConsume\Project7_ApiWeatherConsume.csproj", "{BF231F0C-273A-413A-9826-B815B815CD51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project7_ApiWeatherConsume", "Project7_ApiWeatherConsume\Project7_ApiWeatherConsume.csproj", "{BF231F0C-273A-413A-9826-B815B815CD51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project8_RapidApiCurrency", "Project8_RapidApiCurrency\Project8_RapidApiCurrency.csproj", "{30067228-57F3-43AA-AC8D-FA44E80ED1D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{BF231F0C-273A-413A-9826-B815B815CD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF231F0C-273A-413A-9826-B815B815CD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF231F0C-273A-413A-9826-B815B815CD51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30067228-57F3-43AA-AC8D-FA44E80ED1D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30067228-57F3-43AA-AC8D-FA44E80ED1D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30067228-57F3-43AA-AC8D-FA44E80ED1D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30067228-57F3-43AA-AC8D-FA44E80ED1D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
