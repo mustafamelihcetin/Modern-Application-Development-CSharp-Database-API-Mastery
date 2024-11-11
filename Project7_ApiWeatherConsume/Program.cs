@@ -15,6 +15,7 @@ Console.WriteLine("### 3 - Yeni Şehir Ekleme İşlemi");
 Console.WriteLine("### 4 - Şehir Silme İşlemi");
 Console.WriteLine("### 5 - ID'ye Göre Şehir Getirme İşlemi");
 Console.WriteLine();
+
 #endregion
 
 Console.Write("Tercihiniz: ");
@@ -37,6 +38,7 @@ switch (number)
             }
         }
         break;
+
     case 2:
         string url2 = "https://localhost:7000/api/Weathers";
         using (HttpClient client = new HttpClient())
@@ -55,6 +57,7 @@ switch (number)
             }
         }
         break;
+
     case 3:
         Console.WriteLine("### Yeni Veri Girişi ###\n");
         string name3, country3, detail3;
@@ -79,7 +82,6 @@ switch (number)
             Country = country3,
             Detail = detail3,
             Temperature = temperature
-
         };
         using (HttpClient client = new HttpClient())
         {
@@ -87,20 +89,30 @@ switch (number)
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync(url3, content);
             response.EnsureSuccessStatusCode();
-            
         }
         break;
+
     case 4:
-        Console.WriteLine("Şehir güncelleme alanı");
+        string url4 = "https://localhost:7000/api/Weathers?id=";
+        Console.Write("Silmek istediğiniz ID: ");
+        int id = int.Parse(Console.ReadLine());
+        using (HttpClient client = new HttpClient())
+        {
+            HttpResponseMessage response = await client.DeleteAsync(url4 + id);
+            response.EnsureSuccessStatusCode();
+        }
         break;
+
     case 5:
+
         break;
+
     case 6:
         break;
+
     default:
         Console.WriteLine("Geçerli bir seçenek giriniz.");
         goto x;
 }
-
 
 Console.Read();
