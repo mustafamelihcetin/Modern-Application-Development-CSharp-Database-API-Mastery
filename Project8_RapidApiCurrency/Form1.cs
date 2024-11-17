@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace Project8_RapidApiCurrency
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=USD&to=EUR%2CGBP"),
+                RequestUri = new Uri("https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=TRY&to=USD%2CEUR"),
                 Headers =
     {
         { "x-rapidapi-key", "1edd51c834msh9ac8fb7335f0899p146fa2jsn3ac456265605" },
@@ -35,7 +36,10 @@ namespace Project8_RapidApiCurrency
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+                var json = JObject.Parse(body);
+                var value = json["rates: {USD}"].ToString();
+                lblDollarSelling.Text = value;
+                //Console.WriteLine(body);
             }
         }
     }
