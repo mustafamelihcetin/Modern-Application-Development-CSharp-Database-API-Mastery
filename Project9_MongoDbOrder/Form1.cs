@@ -16,5 +16,15 @@ namespace Project9_MongoDbOrder
         {
             InitializeComponent();
         }
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
