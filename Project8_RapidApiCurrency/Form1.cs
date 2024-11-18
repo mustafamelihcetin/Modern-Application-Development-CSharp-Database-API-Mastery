@@ -37,7 +37,7 @@ namespace Project8_RapidApiCurrency
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
                 var json = JObject.Parse(body);
-                var value = json["rates: {USD}"].ToString();
+                var value = json["rates: USD: Value"].ToString();
                 lblDollarSelling.Text = value;
                 //Console.WriteLine(body);
             }
