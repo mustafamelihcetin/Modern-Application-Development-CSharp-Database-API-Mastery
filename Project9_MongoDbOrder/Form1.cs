@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project9_MongoDbOrder.Entities;
+using Project9_MongoDbOrder.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +18,19 @@ namespace Project9_MongoDbOrder
         {
             InitializeComponent();
         }
+        OrderOperation orderOperation = new OrderOperation();
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            var order = new Order
+            {
+                City = txtCity.Text,
+                CustomerName = txtCustomerName.Text,
+                District = txtDistrict.Text,
+                TotalPrice = decimal.Parse(txtTotalPrice.Text)
+            };
 
+            orderOperation.AddOrder(order);
+            MessageBox.Show("Ekleme işlemi yapıldı.");
         }
         private void btnList_Click(object sender, EventArgs e)
         {
