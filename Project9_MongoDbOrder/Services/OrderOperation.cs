@@ -1,11 +1,8 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using Project9_MongoDbOrder.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project9_MongoDbOrder.Services
 {
@@ -41,11 +38,31 @@ namespace Project9_MongoDbOrder.Services
                     City = order["City"].ToString(),
                     CustomerName = order["CustomerName"].ToString(),
                     District = order["District"].ToString(),
-                    //OrderID = order["OrderID"].ToString(),
+                    OrderID = order["_id"].ToString(),
                     TotalPrice = order["TotalPrice"].AsDecimal
                 });
             }
             return orderList;
+        }
+        public void DeleteOrder(string orderID)
+        {
+            var connection = new MongoDbConnection();
+            var orderCollection = connection.GetOrdersCollection();
+
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(orderID));
+            orderCollection.DeleteOne(filter);
+        }
+        public void UpdateOrder(Order order)
+        {
+            var connection = new MongoDbConnection();
+            var orderCollection = connection.GetOrdersCollection();
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(order.OrderID));
+            var updatedValue = Builders<BsonDocument>.Update
+                .Set("CustomerName", order.CustomerName)
+                .Set("District", order.District)
+                .Set("City", order.District)
+                .Set("TotalPrice", order.TotalPrice);
+            orderCollection.UpdateOne(filter, updatedValue);
         }
     }
 }

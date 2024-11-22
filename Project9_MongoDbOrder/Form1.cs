@@ -38,6 +38,25 @@ namespace Project9_MongoDbOrder
             dataGridView1.DataSource = orders;
         }
 
-        
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string orderId = txtOrderId.Text;
+            orderOperation.DeleteOrder(orderId);
+            MessageBox.Show("Silme işlemi gerçekleşti.");
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string orderId = txtOrderId.Text;
+            var updatedOrder = new Order
+            {
+                City = txtCity.Text,
+                CustomerName = txtCustomerName.Text,
+                District = txtDistrict.Text,
+                OrderID = orderId,
+                TotalPrice = decimal.Parse(txtTotalPrice.Text)
+            };
+            orderOperation.UpdateOrder(updatedOrder);
+        }
     }
 }
