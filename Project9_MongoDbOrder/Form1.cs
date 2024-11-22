@@ -58,5 +58,12 @@ namespace Project9_MongoDbOrder
             };
             orderOperation.UpdateOrder(updatedOrder);
         }
+
+        private void btnGetById_Click(object sender, EventArgs e)
+        {
+            string id = txtOrderId.Text;
+            Order orders = orderOperation.GetOrderByID(id);
+            dataGridView1.DataSource = new List<Order> { orders };
+        }
     }
 }

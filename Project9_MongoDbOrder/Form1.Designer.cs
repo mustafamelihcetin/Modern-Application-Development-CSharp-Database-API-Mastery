@@ -185,6 +185,7 @@
             this.btnGetById.TabIndex = 15;
             this.btnGetById.Text = "Ara";
             this.btnGetById.UseVisualStyleBackColor = true;
+            this.btnGetById.Click += new System.EventHandler(this.btnGetById_Click);
             // 
             // pictureBox1
             // 

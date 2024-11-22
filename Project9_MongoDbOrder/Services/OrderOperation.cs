@@ -64,5 +64,29 @@ namespace Project9_MongoDbOrder.Services
                 .Set("TotalPrice", order.TotalPrice);
             orderCollection.UpdateOne(filter, updatedValue);
         }
+        public Order GetOrderByID(string orderID)
+        {
+            var connection = new MongoDbConnection();
+            var orderCollection = connection.GetOrdersCollection();
+
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(orderID));
+            var result = orderCollection.Find(filter).FirstOrDefault();
+            
+            if(result != null)
+            {
+                return new Order
+                {
+                    City = result["City"].ToString(),
+                    CustomerName = result["CustomerName"].ToString(),
+                    District = result["District"].ToString(),
+                    OrderID = orderID,
+                    TotalPrice = decimal.Parse(result["TotalPrice"].ToString())
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
