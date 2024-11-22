@@ -34,7 +34,8 @@ namespace Project9_MongoDbOrder
         }
         private void btnList_Click(object sender, EventArgs e)
         {
-
+            List<Order> orders = orderOperation.GetAllOrders();
+            dataGridView1.DataSource = orders;
         }
 
         
