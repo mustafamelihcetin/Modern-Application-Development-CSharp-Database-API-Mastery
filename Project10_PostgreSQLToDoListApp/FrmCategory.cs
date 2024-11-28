@@ -50,5 +50,20 @@ namespace Project10_PostgreSQLToDoListApp
                 CategoryList();
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            NpgsqlConnection connection = new NpgsqlConnection("Server=localHost;port=5432;Database=Db10Project20;user ID=postgres;Password=1234;");
+            string query = "Delete From categories Where categoryid = @categoryId";
+            using(var command = new NpgsqlCommand(query,connection))
+            {
+                connection.Open();
+                command.Parameters.AddWithValue("@categoryId",int.Parse(txtName.Text));
+                command.ExecuteNonQuery();
+                MessageBox.Show("Kategori Silindi.");
+                connection.Close();
+                CategoryList();
+            }
+        }
     }
 }
