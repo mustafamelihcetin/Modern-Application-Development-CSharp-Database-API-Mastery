@@ -48,8 +48,9 @@
             this.btnAllList.Name = "btnAllList";
             this.btnAllList.Size = new System.Drawing.Size(144, 32);
             this.btnAllList.TabIndex = 28;
-            this.btnAllList.Text = "Tüm Liste";
+            this.btnAllList.Text = "ID Tarama";
             this.btnAllList.UseVisualStyleBackColor = true;
+            this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
             // 
             // btnUpdate
             // 

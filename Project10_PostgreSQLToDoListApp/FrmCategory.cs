@@ -81,5 +81,38 @@ namespace Project10_PostgreSQLToDoListApp
                 CategoryList();
             }
         }
+
+        private void btnAllList_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var connection = new NpgsqlConnection("Server=localHost;port=5432;Database=Db10Project20;user ID=postgres;Password=1234;"))
+                {
+                    connection.Open();
+                    string query = "Select * From categories Where categoryid = @categoryId";
+                    using (var command = new NpgsqlCommand(query, connection))
+                    {
+                        if (!int.TryParse(txtName.Text, out int categoryId))
+                        {
+                            MessageBox.Show("Lütfen geçerli bir kategori ID'si girin!");
+                            return;
+                        }
+                        command.Parameters.AddWithValue("@categoryId", categoryId);
+
+                        using (var adapter = new NpgsqlDataAdapter(command))
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            dataGridView1.DataSource = dataTable;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+            }
+        }
+
     }
 }
