@@ -16,7 +16,7 @@ namespace Project10_PostgreSQLToDoListApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmToDoListApp());
+            Application.Run(new Form1());
         }
     }
 }

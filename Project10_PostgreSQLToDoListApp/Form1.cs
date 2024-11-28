@@ -16,5 +16,17 @@ namespace Project10_PostgreSQLToDoListApp
         {
             InitializeComponent();
         }
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            FrmToDoListApp frm = new FrmToDoListApp();
+            frm.Show();
+        }
+
+        private void btnCategoryList_Click(object sender, EventArgs e)
+        {
+            FrmCategory frm = new FrmCategory();
+            frm.Show();
+        }
     }
 }

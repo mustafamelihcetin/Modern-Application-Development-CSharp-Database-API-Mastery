@@ -47,6 +47,7 @@
             this.btnCompleted = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.btnCategoryList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -67,6 +68,7 @@
             this.btnList.TabIndex = 1;
             this.btnList.Text = "Listele";
             this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // txtID
             // 
@@ -221,12 +223,23 @@
             this.cmbCategory.Size = new System.Drawing.Size(264, 28);
             this.cmbCategory.TabIndex = 22;
             // 
+            // btnCategoryList
+            // 
+            this.btnCategoryList.Location = new System.Drawing.Point(384, 296);
+            this.btnCategoryList.Name = "btnCategoryList";
+            this.btnCategoryList.Size = new System.Drawing.Size(144, 32);
+            this.btnCategoryList.TabIndex = 23;
+            this.btnCategoryList.Text = "Kategori Listesi";
+            this.btnCategoryList.UseVisualStyleBackColor = true;
+            this.btnCategoryList.Click += new System.EventHandler(this.btnCategoryList_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(539, 408);
+            this.Controls.Add(this.btnCategoryList);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnCompleted);
@@ -279,6 +292,7 @@
         private System.Windows.Forms.Button btnCompleted;
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.Button btnCategoryList;
     }
 }
 

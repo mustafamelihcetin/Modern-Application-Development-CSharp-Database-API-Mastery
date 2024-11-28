@@ -80,6 +80,7 @@
             this.btnCreate.TabIndex = 25;
             this.btnCreate.Text = "Oluştur";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // txtHeader
             // 
@@ -93,7 +94,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(33, 56);
+            this.label2.Location = new System.Drawing.Point(16, 56);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
@@ -117,6 +118,7 @@
             this.btnList.TabIndex = 21;
             this.btnList.Text = "Listele";
             this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // label1
             // 
@@ -156,6 +158,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmCategory";
             this.Text = "FrmCategory";
+            this.Load += new System.EventHandler(this.FrmCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
