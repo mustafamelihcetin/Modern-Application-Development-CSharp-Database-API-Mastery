@@ -7,17 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project1_AdoNetCustomer.Data
+namespace Project11_TriggerOrderStock.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class TblOrder
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int OrderID { get; set; }
+        public string Customer { get; set; }
+        public Nullable<int> ProductID { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<decimal> UnitPrice { get; set; }
+        public Nullable<decimal> TotalPrice { get; set; }
+    
+        public virtual TblProduct TblProduct { get; set; }
     }
 }

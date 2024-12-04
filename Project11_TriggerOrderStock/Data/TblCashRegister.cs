@@ -7,20 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project1_AdoNetCustomer.Data
+namespace Project11_TriggerOrderStock.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblOrder
+    public partial class TblCashRegister
     {
-        public int OrderID { get; set; }
-        public string Customer { get; set; }
-        public Nullable<int> ProductID { get; set; }
-        public Nullable<int> Quantity { get; set; }
-        public Nullable<decimal> UnitPrice { get; set; }
-        public Nullable<decimal> TotalPrice { get; set; }
-    
-        public virtual TblProduct TblProduct { get; set; }
+        public int CashRegisterID { get; set; }
+        public Nullable<decimal> Balance { get; set; }
     }
 }

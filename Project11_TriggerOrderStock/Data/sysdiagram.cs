@@ -7,14 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project1_AdoNetCustomer.Data
+namespace Project11_TriggerOrderStock.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblCashRegister
+    public partial class sysdiagram
     {
-        public int CashRegisterID { get; set; }
-        public Nullable<decimal> Balance { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

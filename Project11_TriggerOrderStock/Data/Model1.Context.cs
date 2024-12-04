@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project1_AdoNetCustomer.Data
+namespace Project11_TriggerOrderStock.Data
 {
     using System;
     using System.Data.Entity;

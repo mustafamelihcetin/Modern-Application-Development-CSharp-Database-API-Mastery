@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\C#\My20CSharpProjects\Project1_AdoNetCustomer\Data\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\C#\My20CSharpProjects\Project11_TriggerOrderStock\Data\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
