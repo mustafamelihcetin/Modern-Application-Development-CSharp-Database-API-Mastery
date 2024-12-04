@@ -34,7 +34,16 @@ namespace Project11_TriggerOrderStock
                 var values = context.TblProducts.ToList();
                 foreach(var product in values)
                 {
-                    Console.WriteLine(product.ProductID + "- " + product.ProductName + " Stok Sayısı: " + product.ProductStock + " Fiyatı: " + product.ProductPrice + " TL");
+                    Console.WriteLine(product.ProductID + "- " + product.ProductName + " - Stok Sayısı: " + product.ProductStock + " - Fiyatı: " + product.ProductPrice + " TL");
+                }
+            }
+            if(number =="2")
+            {
+                Console.WriteLine("### Sipariş Listesi ###");
+                var values = context.TblOrders.ToList();
+                foreach (var order in values)
+                {
+                    Console.WriteLine(order.OrderID + "- " + order.TblProduct.ProductName + " - Birim Sayısı: " + order.UnitPrice + " - Adet: " + order.Quantity + " - Toplam Fiyat: " + order.TotalPrice + " TL");
                 }
             }
             Console.Read();
