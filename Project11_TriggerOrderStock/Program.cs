@@ -46,6 +46,13 @@ namespace Project11_TriggerOrderStock
                     Console.WriteLine(order.OrderID + "- " + order.TblProduct.ProductName + " - Birim Sayısı: " + order.UnitPrice + " - Adet: " + order.Quantity + " - Toplam Fiyat: " + order.TotalPrice + " TL");
                 }
             }
+            if(number =="3")
+            {
+                Console.WriteLine("### Kasa Durumu ###");
+                var values = context.TblCashRegisters.Select(x => x.Balance).FirstOrDefault();
+                Console.Write("Kasadaki Toplam Tutar: " + values + " TL");
+
+            }
             Console.Read();
         }
     }
