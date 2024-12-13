@@ -65,6 +65,11 @@ namespace Project11_TriggerOrderStock
                 Console.Write("Ürün Adedi: ");
                 int quantity = int.Parse(Console.ReadLine());
 
+                Console.WriteLine();
+
+                Console.WriteLine("### Ürün Bilgileri ###");
+                Console.WriteLine();
+
                 var productName=context.TblProducts.Where(x=> x.ProductID == productID).Select(y=> y.ProductName).FirstOrDefault();
                 Console.WriteLine("Ürün Adı: " + productName);
 
