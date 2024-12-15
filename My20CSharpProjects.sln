@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project10_PostgreSQLToDoLis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project11_TriggerOrderStock", "Project11_TriggerOrderStock\Project11_TriggerOrderStock.csproj", "{1CBD8A50-A71D-4090-8DCA-FF0F343E04C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project12_JwtToken", "Project12_JwtToken\Project12_JwtToken.csproj", "{B4F30E04-F5DF-438E-8CFD-AA460A9D98A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{1CBD8A50-A71D-4090-8DCA-FF0F343E04C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CBD8A50-A71D-4090-8DCA-FF0F343E04C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CBD8A50-A71D-4090-8DCA-FF0F343E04C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F30E04-F5DF-438E-8CFD-AA460A9D98A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F30E04-F5DF-438E-8CFD-AA460A9D98A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F30E04-F5DF-438E-8CFD-AA460A9D98A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F30E04-F5DF-438E-8CFD-AA460A9D98A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
