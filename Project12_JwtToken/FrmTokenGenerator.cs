@@ -20,8 +20,10 @@ namespace Project12_JwtToken
 
         private void btnGenerateToken_Click(object sender, EventArgs e)
         {
+            string userName = txtName.Text;
+            string email = txtEmail.Text;
             TokenGenerator tokenGenerator = new TokenGenerator();
-            string token = tokenGenerator.GenerateJwtToken();
+            string token = tokenGenerator.GenerateJwtToken(userName,email);
             rtbToken.Text = token;
         }
     }
