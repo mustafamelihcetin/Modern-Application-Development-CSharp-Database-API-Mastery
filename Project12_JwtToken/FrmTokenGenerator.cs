@@ -22,8 +22,10 @@ namespace Project12_JwtToken
         {
             string userName = txtName.Text;
             string email = txtEmail.Text;
+            string name = txtName.Text;
+            string surname = txtSurname.Text;
             TokenGenerator tokenGenerator = new TokenGenerator();
-            string token = tokenGenerator.GenerateJwtToken(userName,email);
+            string token = tokenGenerator.GenerateJwtToken(userName,email,name,surname);
             rtbToken.Text = token;
         }
     }
