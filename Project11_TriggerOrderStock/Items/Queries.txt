@@ -1,0 +1,47 @@
+﻿CREATE TRIGGER DecreaseProductStockCount
+ON TblOrder
+AFTER INSERT
+AS
+DECLARE @productQuantity int
+DECLARE @productID int
+SELECT @productQuantity = Quantity, @productID = ProductID from inserted
+UPDATE TblProduct SET ProductStock -= @productQuantity WHERE ProductID=@productID
+
+
+USE [Db11Project20]
+GO
+/****** Object:  Trigger [dbo].[DecreaseProcessCount]    Script Date: 15/12/2024 02:53:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TRIGGER [dbo].[DecreaseProcessCount]
+ON [dbo].[TblOrder]
+AFTER DELETE
+AS
+UPDATE TblProcess SET Process-=1
+
+
+
+USE [Db11Project20]
+GO
+/****** Object:  Trigger [dbo].[IncreaseProcessCount]    Script Date: 15/12/2024 02:53:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TRIGGER [dbo].[IncreaseProcessCount]
+ON [dbo].[TblOrder]
+AFTER INSERT
+AS 
+UPDATE TblProcess SET Process+=1
+
+
+
+CREATE TRIGGER AddTotalPriceToCashRegisterBalance
+ON TblOrder
+AFTER INSERT
+AS
+DECLARE @totalPrice decimal(18,2)
+SELECT @totalPrice = TotalPrice FROM inserted
+UPDATE TblCashRegister SET Balance+=@totalPrice

@@ -80,6 +80,16 @@ namespace Project11_TriggerOrderStock
 
                 decimal totalPrice = quantity * decimal.Parse(productUnitPrice.ToString());
                 Console.WriteLine("Total Fiyat: " + totalPrice);
+
+                TblOrder tblOrder = new TblOrder();
+                tblOrder.ProductID = productID;
+                tblOrder.Quantity = quantity;
+                tblOrder.UnitPrice = productUnitPrice;
+                tblOrder.TotalPrice = totalPrice;
+                tblOrder.Customer = customer;
+
+                context.TblOrders.Add(tblOrder);
+                context.SaveChanges();
             }
             if (number == "5")
             {
