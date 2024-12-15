@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project12_JwtToken.JWT;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,9 @@ namespace Project12_JwtToken
 
         private void btnGenerateToken_Click(object sender, EventArgs e)
         {
-
+            TokenGenerator tokenGenerator = new TokenGenerator();
+            string token = tokenGenerator.GenerateJwtToken();
+            rtbToken.Text = token;
         }
     }
 }
