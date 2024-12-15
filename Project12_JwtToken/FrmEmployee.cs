@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Project12_JwtToken
 {
-    public partial class FrmEmployer : Form
+    public partial class FrmEmployee : Form
     {
-        public FrmEmployer()
+        public FrmEmployee()
         {
             InitializeComponent();
         }

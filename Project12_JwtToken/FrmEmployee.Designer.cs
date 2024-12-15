@@ -1,6 +1,6 @@
 ﻿namespace Project12_JwtToken
 {
-    partial class FrmEmployer
+    partial class FrmEmployee
     {
         /// <summary>
         /// Required designer variable.

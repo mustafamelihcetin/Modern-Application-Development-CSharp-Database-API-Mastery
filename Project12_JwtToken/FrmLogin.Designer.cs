@@ -50,6 +50,7 @@
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Giriş";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label1
             // 
@@ -91,6 +92,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLogin";
             this.Text = "Kullanıcı Girişi";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
