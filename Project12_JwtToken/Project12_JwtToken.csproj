@@ -64,6 +64,7 @@
     <Compile Include="FrmTokenGenerator.Designer.cs">
       <DependentUpon>FrmTokenGenerator.cs</DependentUpon>
     </Compile>
+    <Compile Include="JWT\TokenGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmEmployer.resx">
