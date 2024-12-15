@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project12_JwtToken.JWT;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,6 @@ namespace Project12_JwtToken
         {
             InitializeComponent();
         }
-
         SqlConnection connection = new SqlConnection("Server=DPCM; initial catalog=Db12Project20; integrated security=true");
         private void FrmLogin_Load(object sender, EventArgs e)
         {
@@ -26,6 +26,7 @@ namespace Project12_JwtToken
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            TokenGenerator tokenGenerator = new TokenGenerator();
             connection.Open();
             SqlCommand command = new SqlCommand("Select * From TblUser Where Username=@userName and Password=@password", connection);
             command.Parameters.AddWithValue("@userName", txtUsername.Text);
@@ -33,7 +34,10 @@ namespace Project12_JwtToken
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
+                string token = tokenGenerator.GenerateJwtToken2(txtUsername.Text);
+                //MessageBox.Show(token);
                 FrmEmployee employee = new FrmEmployee();
+                employee.tokenGet = token;
                 employee.Show();
             }
             else
