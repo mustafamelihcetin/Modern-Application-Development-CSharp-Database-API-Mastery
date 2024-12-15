@@ -52,6 +52,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmEmployer";
             this.Text = "Personel Listesi";
+            this.Load += new System.EventHandler(this.FrmEmployer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
