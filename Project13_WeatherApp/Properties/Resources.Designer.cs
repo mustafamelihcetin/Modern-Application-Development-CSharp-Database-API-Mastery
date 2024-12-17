@@ -63,9 +63,9 @@ namespace Project13_WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_cloud_40px {
+        internal static System.Drawing.Bitmap icons8_rain_480px_1 {
             get {
-                object obj = ResourceManager.GetObject("icons8_cloud_40px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_rain_480px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Project13_WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_rain_40px {
+        internal static System.Drawing.Bitmap icons8_snow_480px {
             get {
-                object obj = ResourceManager.GetObject("icons8_rain_40px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_snow_480px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Project13_WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_sun_48px {
+        internal static System.Drawing.Bitmap icons8_sun_256px {
             get {
-                object obj = ResourceManager.GetObject("icons8_sun_48px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_sun_256px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Project13_WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_sun_behind_small_cloud_48px {
+        internal static System.Drawing.Bitmap icons8_sun_behind_small_cloud_256px {
             get {
-                object obj = ResourceManager.GetObject("icons8_sun_behind_small_cloud_48px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_sun_behind_small_cloud_256px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

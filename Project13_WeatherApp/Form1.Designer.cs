@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTemp = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl1WindSpeed = new System.Windows.Forms.Label();
+            this.lbl1humidity = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblWindSpeed = new System.Windows.Forms.Label();
+            this.lblHumidity = new System.Windows.Forms.Label();
+            this.lblFahreneit = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,17 +54,6 @@
             this.label1.Size = new System.Drawing.Size(234, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "İSTANBUL, TR";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Project13_WeatherApp.Properties.Resources.icons8_sun_48px;
-            this.pictureBox1.Location = new System.Drawing.Point(48, 224);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -88,16 +77,16 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Bugün";
             // 
-            // label4
+            // lblTemp
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(360, 224);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 55);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "00.00";
+            this.lblTemp.AutoSize = true;
+            this.lblTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.lblTemp.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTemp.Location = new System.Drawing.Point(360, 224);
+            this.lblTemp.Name = "lblTemp";
+            this.lblTemp.Size = new System.Drawing.Size(145, 55);
+            this.lblTemp.TabIndex = 5;
+            this.lblTemp.Text = "00.00";
             // 
             // label5
             // 
@@ -121,27 +110,27 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Bugün";
             // 
-            // label7
+            // lbl1WindSpeed
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label7.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label7.Location = new System.Drawing.Point(79, 360);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 24);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Rüzgar";
+            this.lbl1WindSpeed.AutoSize = true;
+            this.lbl1WindSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbl1WindSpeed.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbl1WindSpeed.Location = new System.Drawing.Point(79, 360);
+            this.lbl1WindSpeed.Name = "lbl1WindSpeed";
+            this.lbl1WindSpeed.Size = new System.Drawing.Size(70, 24);
+            this.lbl1WindSpeed.TabIndex = 8;
+            this.lbl1WindSpeed.Text = "Rüzgar";
             // 
-            // label8
+            // lbl1humidity
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label8.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label8.Location = new System.Drawing.Point(103, 400);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 24);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Nem";
+            this.lbl1humidity.AutoSize = true;
+            this.lbl1humidity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbl1humidity.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbl1humidity.Location = new System.Drawing.Point(103, 400);
+            this.lbl1humidity.Name = "lbl1humidity";
+            this.lbl1humidity.Size = new System.Drawing.Size(51, 24);
+            this.lbl1humidity.TabIndex = 9;
+            this.lbl1humidity.Text = "Nem";
             // 
             // label9
             // 
@@ -154,38 +143,49 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Fahreneiht";
             // 
-            // label10
+            // lblWindSpeed
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(168, 360);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 20);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "00";
+            this.lblWindSpeed.AutoSize = true;
+            this.lblWindSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblWindSpeed.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblWindSpeed.Location = new System.Drawing.Point(168, 360);
+            this.lblWindSpeed.Name = "lblWindSpeed";
+            this.lblWindSpeed.Size = new System.Drawing.Size(27, 20);
+            this.lblWindSpeed.TabIndex = 11;
+            this.lblWindSpeed.Text = "00";
             // 
-            // label11
+            // lblHumidity
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(168, 400);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 20);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "00";
+            this.lblHumidity.AutoSize = true;
+            this.lblHumidity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblHumidity.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblHumidity.Location = new System.Drawing.Point(168, 400);
+            this.lblHumidity.Name = "lblHumidity";
+            this.lblHumidity.Size = new System.Drawing.Size(27, 20);
+            this.lblHumidity.TabIndex = 12;
+            this.lblHumidity.Text = "00";
             // 
-            // label12
+            // lblFahreneit
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(168, 440);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(27, 20);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "00";
+            this.lblFahreneit.AutoSize = true;
+            this.lblFahreneit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblFahreneit.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblFahreneit.Location = new System.Drawing.Point(168, 440);
+            this.lblFahreneit.Name = "lblFahreneit";
+            this.lblFahreneit.Size = new System.Drawing.Size(27, 20);
+            this.lblFahreneit.TabIndex = 13;
+            this.lblFahreneit.Text = "00";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Project13_WeatherApp.Properties.Resources.icons8_sun_256px;
+            this.pictureBox1.Location = new System.Drawing.Point(48, 216);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -193,15 +193,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(551, 516);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblFahreneit);
+            this.Controls.Add(this.lblHumidity);
+            this.Controls.Add(this.lblWindSpeed);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl1humidity);
+            this.Controls.Add(this.lbl1WindSpeed);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblTemp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -210,6 +210,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -222,15 +223,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTemp;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl1WindSpeed;
+        private System.Windows.Forms.Label lbl1humidity;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblWindSpeed;
+        private System.Windows.Forms.Label lblHumidity;
+        private System.Windows.Forms.Label lblFahreneit;
     }
 }
 
