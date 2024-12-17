@@ -44,7 +44,26 @@ namespace Project13_WeatherApp
                 var value = json["main"]["feels_like"].ToString();
                 lblFahreneit.Text = value;
                 var temp = json["main"]["temp"].ToString();
-                lblTemp.Text = ((decimal.Parse(temp) - 32)*5/9).ToString("F2");
+                lblTemp.Text = ((decimal.Parse(temp) - 32) * 5 / 9).ToString("F2");
+
+                var weather = json["weather"][0]["main"].ToString();
+
+                if (weather == "Clouds")
+                {
+                    pictureBox1.Image = Image.FromFile("D:\\C#\\My20CSharpProjects\\Project13_WeatherApp\\Items\\icons8_sun_behind_small_cloud_256px.png");
+                }
+                else if (weather == "Sunny" || weather == "Clear")
+                {
+                    pictureBox1.Image = Image.FromFile("D:\\C#\\My20CSharpProjects\\Project13_WeatherApp\\Items\\icons8_sun_256px.png");
+                }
+                else if (weather == "Snowy")
+                {
+                    pictureBox1.Image = Image.FromFile("D:\\C#\\My20CSharpProjects\\Project13_WeatherApp\\Items\\icons8_snow_480px.png");
+                }
+                else if (weather == "Rainy")
+                {
+                    pictureBox1.Image = Image.FromFile("D:\\C#\\My20CSharpProjects\\Project13_WeatherApp\\Items\\icons8_rain_480px_1.png");
+                }
 
             }
         }
