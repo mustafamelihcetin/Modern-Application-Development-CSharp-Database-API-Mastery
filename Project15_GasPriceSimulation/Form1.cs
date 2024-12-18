@@ -16,5 +16,10 @@ namespace Project15_GasPriceSimulation
         {
             InitializeComponent();
         }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
     }
 }
