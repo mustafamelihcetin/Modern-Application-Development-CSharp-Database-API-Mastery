@@ -20,6 +20,16 @@ namespace Project15_GasPriceSimulation
         private void btnStart_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            timer1.Interval = 1000;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Value += 5;
+            if (progressBar1.Value == 100)
+            {
+                timer1.Stop();
+            }
         }
     }
 }
