@@ -142,6 +142,7 @@
             this.btnRegister.Size = new System.Drawing.Size(168, 40);
             this.btnRegister.TabIndex = 13;
             this.btnRegister.Text = "Kayıt Ol";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // Form1
             // 
