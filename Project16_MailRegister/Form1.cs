@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MailKit.Net.Smtp;
+using MimeKit;
 
 namespace Project16_MailRegister
 {
@@ -30,8 +32,35 @@ namespace Project16_MailRegister
             user.IsConfirm = false;
             user.ConfirmCode = confirmCode.ToString();
 
-            context.TblUsers.Add(user); 
+            context.TblUsers.Add(user);
             context.SaveChanges();
+
+            #region MailCoding
+            MimeMessage mimeMessage = new MimeMessage();
+
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("AdminRegister", "mail Adresi");
+            mimeMessage.From.Add(mailboxAddressFrom);
+
+            MailboxAddress mailboxAddressTo = new MailboxAddress("User", txtEmail.Text);
+            mimeMessage.To.Add(mailboxAddressTo);
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = "E-posta adresinizin onay kodu: " + confirmCode;
+            mimeMessage.Body = bodyBuilder.ToMessageBody();
+
+            mimeMessage.Subject = "E-posta Onay Kodu";
+
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Connect("smtp.gmail.com", 587, false);
+            smtpClient.Authenticate("mail", "key");
+            smtpClient.Send(mimeMessage);
+            smtpClient.Disconnect(true);
+
+            MessageBox.Show("Mail adresinize doğrulama kodu gönderilmiştir.");
+            FrmMailConfirm frmMailConfirm = new FrmMailConfirm();
+            frmMailConfirm.Show();
+            #endregion
+
         }
     }
 }
