@@ -76,12 +76,13 @@
             // 
             this.btnMailConfirm.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.btnMailConfirm.Appearance.Options.UseFont = true;
-            this.btnMailConfirm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister.ImageOptions.Image")));
+            this.btnMailConfirm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMailConfirm.ImageOptions.Image")));
             this.btnMailConfirm.Location = new System.Drawing.Point(168, 104);
             this.btnMailConfirm.Name = "btnMailConfirm";
             this.btnMailConfirm.Size = new System.Drawing.Size(208, 40);
             this.btnMailConfirm.TabIndex = 14;
             this.btnMailConfirm.Text = "Aktivasyonu Tamamla";
+            this.btnMailConfirm.Click += new System.EventHandler(this.btnMailConfirm_Click);
             // 
             // FrmMailConfirm
             // 
@@ -95,6 +96,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmMailConfirm";
             this.Text = "Aktivasyon";
+            this.Load += new System.EventHandler(this.FrmMailConfirm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

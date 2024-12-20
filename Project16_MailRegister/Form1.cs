@@ -38,7 +38,7 @@ namespace Project16_MailRegister
             #region MailCoding
             MimeMessage mimeMessage = new MimeMessage();
 
-            MailboxAddress mailboxAddressFrom = new MailboxAddress("AdminRegister", "mail Adresi");
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("AdminRegister", "mctnprojects@gmail.com");
             mimeMessage.From.Add(mailboxAddressFrom);
 
             MailboxAddress mailboxAddressTo = new MailboxAddress("User", txtEmail.Text);
@@ -52,12 +52,13 @@ namespace Project16_MailRegister
 
             SmtpClient smtpClient = new SmtpClient();
             smtpClient.Connect("smtp.gmail.com", 587, false);
-            smtpClient.Authenticate("mail", "key");
+            smtpClient.Authenticate("mctnprojects@gmail.com", "key");
             smtpClient.Send(mimeMessage);
             smtpClient.Disconnect(true);
 
             MessageBox.Show("Mail adresinize doğrulama kodu gönderilmiştir.");
             FrmMailConfirm frmMailConfirm = new FrmMailConfirm();
+            frmMailConfirm.email = txtEmail.Text;
             frmMailConfirm.Show();
             #endregion
 
