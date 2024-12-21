@@ -17,9 +17,20 @@ namespace Project19_TableStatusMomentary
         {
             InitializeComponent();
         }
-        Db19Project20Entities context = new Db19Project20Entities();
         private void Form1_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Db19Project20Entities context = new Db19Project20Entities();
+
+            var buttons = this.Controls.OfType<Button>().ToList();
+            foreach (var btn in buttons)
+            {
+                this.Controls.Remove(btn);
+            }
             var values = context.TblTables.ToList();
 
             int buttonWidth = 150;
