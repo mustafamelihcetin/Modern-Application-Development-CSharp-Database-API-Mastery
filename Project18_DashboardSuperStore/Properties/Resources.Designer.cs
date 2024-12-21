@@ -73,6 +73,16 @@ namespace Project18_DashboardSuperStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_airplane_320px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_airplane_320px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_city_buildings_240px {
             get {
                 object obj = ResourceManager.GetObject("icons8_city_buildings_240px", resourceCulture);
@@ -113,6 +123,16 @@ namespace Project18_DashboardSuperStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_mail_480px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_mail_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_man_in_headphones_480px {
             get {
                 object obj = ResourceManager.GetObject("icons8_man_in_headphones_480px", resourceCulture);
@@ -126,6 +146,26 @@ namespace Project18_DashboardSuperStore.Properties {
         internal static System.Drawing.Bitmap icons8_order_history_480px {
             get {
                 object obj = ResourceManager.GetObject("icons8_order_history_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_480px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_print_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_rocket_480px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_rocket_480px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

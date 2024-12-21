@@ -124,5 +124,17 @@
   <ItemGroup>
     <None Include="Resources\icons8_country_music_480px_1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_mail_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_rocket_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_print_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_airplane_320px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

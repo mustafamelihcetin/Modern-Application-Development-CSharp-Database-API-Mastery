@@ -57,6 +57,37 @@ namespace Project18_DashboardSuperStore
             }
             sqlConnection.Close();
             #endregion
+            #region Charts
+
+            sqlConnection.Open();
+            SqlCommand cmd5 = new SqlCommand("Select Top(7) Country, Count(*) From superstore Group By Country Order By Count(*) Desc", sqlConnection);
+            SqlDataReader reader4 = cmd5.ExecuteReader();
+            while (reader4.Read())
+            {
+                chart1.Series["Series1"].Points.AddXY(reader4[0], reader4[1]);
+            }
+            sqlConnection.Close();
+
+            sqlConnection.Open();
+            SqlCommand cmd6 = new SqlCommand("Select Top(4) Country, Sum(Quantity) From superstore Group By Country Order By Sum(Quantity) Desc", sqlConnection);
+            SqlDataReader reader5 = cmd6.ExecuteReader();
+            while (reader5.Read())
+            {
+                chart2.Series["Series1"].Points.AddXY(reader5[0], reader5[1]);
+            }
+            sqlConnection.Close();
+
+            sqlConnection.Close();
+
+            sqlConnection.Open();
+            SqlCommand cmd7 = new SqlCommand("Select Order_Priority, Count(*) From superstore Group By Order_Priority Order By Order_Priority Desc", sqlConnection);
+            SqlDataReader reader6 = cmd7.ExecuteReader();
+            while (reader6.Read())
+            {
+                chart3.Series["Series1"].Points.AddXY(reader6[0], reader6[1]);
+            }
+            sqlConnection.Close();
+            #endregion
         }
     }
 }

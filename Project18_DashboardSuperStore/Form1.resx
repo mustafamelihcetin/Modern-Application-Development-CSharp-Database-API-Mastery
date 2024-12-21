@@ -558,4 +558,7 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Superstore veri seti analizi yaklaşık 55.000 satırdan oluşan bir satış datasını barındırmaktadır. Satış datası içerisinde ülkelere, şehirlere, ilçelere ve önceliklere göre satış gruplandırmaları yapılabilir. Yukarıda Widget'lar üzerinde bazı istatistiksel veriler gösterilmiştir.</value>
   </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Superstore veri seti analizi yaklaşık 55.000 satırdan oluşan bir satış datasını barındırmaktadır. Satış datası içerisinde ülkelere, şehirlere, ilçelere ve önceliklere göre satış gruplandırmaları yapılabilir. Yukarıda Widget'lar üzerinde bazı istatistiksel veriler gösterilmiştir.</value>
+  </data>
 </root>
