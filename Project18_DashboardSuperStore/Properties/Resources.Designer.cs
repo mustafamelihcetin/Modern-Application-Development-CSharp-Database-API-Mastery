@@ -83,6 +83,36 @@ namespace Project18_DashboardSuperStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_country_480px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_country_480px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_country_music_480px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_country_music_480px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_information_pyramid_480px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_information_pyramid_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_man_in_headphones_480px {
             get {
                 object obj = ResourceManager.GetObject("icons8_man_in_headphones_480px", resourceCulture);

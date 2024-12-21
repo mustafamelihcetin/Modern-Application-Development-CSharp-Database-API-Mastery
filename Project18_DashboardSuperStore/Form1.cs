@@ -20,6 +20,7 @@ namespace Project18_DashboardSuperStore
         SqlConnection sqlConnection = new SqlConnection("Server=DPCM; initial catalog=Db17Project20;integrated security=true");
         private void Form1_Load(object sender, EventArgs e)
         {
+            #region Widgets
             sqlConnection.Open();
             SqlCommand cmd1 = new SqlCommand("Select count(*) from superstore", sqlConnection);
             SqlDataReader reader = cmd1.ExecuteReader();
@@ -32,7 +33,7 @@ namespace Project18_DashboardSuperStore
             sqlConnection.Open();
             SqlCommand cmd2 = new SqlCommand("Select count(Distinct(City)) from superstore", sqlConnection);
             SqlDataReader reader1 = cmd2.ExecuteReader();
-            while(reader1.Read())
+            while (reader1.Read())
             {
                 lblTotalCity.Text = reader1[0].ToString();
             }
@@ -41,7 +42,7 @@ namespace Project18_DashboardSuperStore
             sqlConnection.Open();
             SqlCommand cmd3 = new SqlCommand("Select Sum(Quantity) from superstore", sqlConnection);
             SqlDataReader reader2 = cmd3.ExecuteReader();
-            while(reader2.Read())
+            while (reader2.Read())
             {
                 lblTotalOrder.Text = reader2[0].ToString();
             }
@@ -55,7 +56,7 @@ namespace Project18_DashboardSuperStore
                 lblOrderFromTurkiye.Text = reader3[0].ToString();
             }
             sqlConnection.Close();
-
+            #endregion
         }
     }
 }

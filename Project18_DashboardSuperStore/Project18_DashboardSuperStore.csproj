@@ -115,5 +115,14 @@
   <ItemGroup>
     <None Include="Resources\icons8_man_in_headphones_480px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_country_480px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_information_pyramid_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_country_music_480px_1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
